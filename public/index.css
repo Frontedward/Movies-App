@@ -6,3 +6,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+.ant-tabs, .ant-tabs-list, .ant-tabs-nav-list, .ant-tabs-nav-wrap {
+    /*width: 110px;*/
+}
