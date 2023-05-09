@@ -1,20 +1,24 @@
 {
-  "name": "movies-app",
+  "name": "movie-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@ant-design/icons": "^5.0.1",
+    "@reduxjs/toolkit": "^1.9.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "antd": "^5.4.6",
-    "axios": "^1.4.0",
-    "date-fns": "^2.30.0",
-    "prop-types": "^15.8.1",
+    "antd": "^5.1.4",
+    "date-fns": "^2.29.3",
+    "lodash": "^4.17.21",
+    "lodash.debounce": "^4.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
     "react-scripts": "5.0.1",
-    "styled-components": "^5.3.10",
+    "redux": "^4.2.0",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.4.2",
+    "timers-browserify": "^2.0.12",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -22,7 +26,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "precommit": "lint-staged"
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "format": "prettier src --write",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -42,10 +49,20 @@
       "last 1 safari version"
     ]
   },
+  "devDependencies": {
+    "eslint": "^8.32.0",
+    "eslint-plugin-import": "^2.27.4",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.32.0",
+    "husky": "^8.0.0",
+    "prettier": "^2.8.3"
+  },
   "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint --fix",
-      "prettier --write"
+    "**/*.{js,jsx}": [
+      "npm run lint:fix",
+      "npm run format"
     ]
   }
 }
