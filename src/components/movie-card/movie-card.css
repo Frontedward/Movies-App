@@ -1,0 +1,36 @@
+.movie-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+@media (max-width: 520px) {
+  .movie-card {
+    grid-template-columns: 1fr;
+  }
+
+  .movie-card__poster {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+  }
+
+  .movie-card__mobile-info {
+    padding-left: 90px;
+    margin-bottom: 20px;
+  }
+}
+
+.movie-card__content {
+  flex-grow: 0;
+}
+
+.movie-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 0;
+  margin: 10px 0;
+}
